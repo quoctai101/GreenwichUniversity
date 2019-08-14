@@ -4,22 +4,27 @@ class Category
   public $id;
   public $name;
   public $description;
+  public $courseNumber;
 
-  function __construct($id, $name, $description)
+  function __construct($id, $name, $description, $courseNumber)
   {
     $this->id = $id;
     $this->name = $name;
     $this->description = $description;
+    $this->courseNumber = $courseNumber;
   }
 
   static function all()
   {
     $list = [];
     $db = DB::getInstance();
-    $req = $db->query("SELECT * FROM gu_category ORDER BY \"CategoryID\" ASC;");
-
+    $req = $db->query("SELECT gu_category.*, COUNT(gu_course.CourseID) AS number_of_course
+                        FROM gu_category LEFT JOIN gu_course
+                        ON gu_category.CategoryID = gu_course.CategoryID
+                        GROUP BY gu_category.CategoryID
+                        ORDER BY gu_category.CategoryID ASC;");
     foreach ($req->fetchAll() as $item) {
-      $list[] = new Category($item['CategoryID'], $item['CategoryName'], $item['Description']);
+      $list[] = new Category($item['CategoryID'], $item['CategoryName'], $item['Description'], $item['number_of_course']);
     }
 
     return $list;
@@ -32,9 +37,9 @@ class Category
     $req->execute();
     $item = $req->fetch();
     if (isset($item['CategoryID'])) {
-      return new Category($item['CategoryID'], $item['CategoryName'], $item['Description']);
+      return new Category($item['CategoryID'], $item['CategoryName'], $item['Description'], NULL);
     }
-    return new Category(NULL,NULL,NULL);
+    return new Category(NULL,NULL,NULL,NULL);
   }
   static function delete($id)
   {
