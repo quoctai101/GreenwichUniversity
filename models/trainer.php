@@ -20,7 +20,7 @@ class Trainer
   {
     $list = [];
     $db = DB::getInstance();
-    $req = $db->query("SELECT * FROM gu_trainer ORDER BY \"TrainerID\" ASC;");
+    $req = $db->query("SELECT * FROM gu_trainer ORDER BY TrainerID ASC;");
 
     foreach ($req->fetchAll() as $item) {
       $list[] = new Trainer($item['TrainerID'], $item['TrainerName'], $item['Email'], $item['Telephone'], $item['Password']);
@@ -31,7 +31,7 @@ class Trainer
   static function find($id)
   {
     $db = DB::getInstance();
-    $req = $db->prepare("SELECT * FROM gu_trainer WHERE \"TrainerID\" = :id;");
+    $req = $db->prepare("SELECT * FROM gu_trainer WHERE TrainerID = :id;");
     $req->bindValue(':id',$id);
     $req->execute();
     $item = $req->fetch();
@@ -43,18 +43,18 @@ class Trainer
   static function delete($id)
   {
     $db = DB::getInstance();
-    $req = $db->prepare("DELETE FROM gu_trainer WHERE \"TrainerID\" = :id;");
+    $req = $db->prepare("DELETE FROM gu_trainer WHERE TrainerID = :id;");
     $req->bindValue(':id',$id);
     $req->execute();
   }
-  static function add($name, $email, $telephone, $password)
+  static function add($name, $email, $telephone, $password = NULL)
   {
     $db = DB::getInstance();
-    $req = $db->prepare("INSERT INTO gu_trainer(\"TrainerName\", \"Email\", \"Telephone\", \"Password\")  VALUES (:name, :email, :telephone, :password);");
+    $req = $db->prepare("INSERT INTO gu_trainer(TrainerName, Email, Telephone, Password)  VALUES (:name, :email, :telephone, :password);");
     $req->bindValue(':name',$name);
     $req->bindValue(':email',$email);
     $req->bindValue(':telephone',$telephone);
-    $req->bindValue(':password',$password);
+    $req->bindValue(':password',$name);
     $req->execute();
   }
   static function update($id,$name, $email, $telephone, $password = NULL)
@@ -62,11 +62,11 @@ class Trainer
     $db = DB::getInstance();
     if($password){
       $req = $db->prepare("UPDATE gu_trainer SET
-                        \"TrainerName\" = :name,
-                        \"Email\" = :email,
-                        \"Telephone\" = :telephone,
-                        \"Password\" = :password
-                        WHERE \"TrainerID\" = :id;");
+                        TrainerName = :name,
+                        Email = :email,
+                        Telephone = :telephone,
+                        Password = :password
+                        WHERE TrainerID = :id;");
       $req->bindValue(':name',$name);
       $req->bindValue(':email',$email);
       $req->bindValue(':telephone',$telephone);
@@ -75,10 +75,10 @@ class Trainer
     }
     else {
       $req = $db->prepare("UPDATE gu_trainer SET
-                        \"TrainerName\" = :name,
-                        \"Email\" = :email,
-                        \"Telephone\" = :telephone
-                        WHERE \"TrainerID\" = :id;");
+                        TrainerName = :name,
+                        Email = :email,
+                        Telephone = :telephone
+                        WHERE TrainerID = :id;");
       $req->bindValue(':name',$name);
       $req->bindValue(':email',$email);
       $req->bindValue(':telephone',$telephone);
