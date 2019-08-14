@@ -57,20 +57,33 @@ class Trainer
     $req->bindValue(':password',$password);
     $req->execute();
   }
-  static function update($id,$name, $email, $telephone, $password)
+  static function update($id,$name, $email, $telephone, $password = NULL)
   {
     $db = DB::getInstance();
-    $req = $db->prepare("UPDATE gu_trainer SET
+    if($password){
+      $req = $db->prepare("UPDATE gu_trainer SET
                         \"TrainerName\" = :name,
                         \"Email\" = :email,
                         \"Telephone\" = :telephone,
                         \"Password\" = :password
                         WHERE \"TrainerID\" = :id;");
-    $req->bindValue(':name',$name);
-    $req->bindValue(':email',$email);
-    $req->bindValue(':telephone',$telephone);
-    $req->bindValue(':password',$password);
-    $req->bindValue(':id',$id);
+      $req->bindValue(':name',$name);
+      $req->bindValue(':email',$email);
+      $req->bindValue(':telephone',$telephone);
+      $req->bindValue(':password',$password);
+      $req->bindValue(':id',$id);
+    }
+    else {
+      $req = $db->prepare("UPDATE gu_trainer SET
+                        \"TrainerName\" = :name,
+                        \"Email\" = :email,
+                        \"Telephone\" = :telephone
+                        WHERE \"TrainerID\" = :id;");
+      $req->bindValue(':name',$name);
+      $req->bindValue(':email',$email);
+      $req->bindValue(':telephone',$telephone);
+      $req->bindValue(':id',$id);
+    }
     $req->execute();
   }
 }
