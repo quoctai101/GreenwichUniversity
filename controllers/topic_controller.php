@@ -26,12 +26,12 @@ class TopicController extends BaseController
   }
   public function add()
   {
-    Topic::add($_POST['name'],$_POST['trainerid'],$_POST['courseid']);
+    Topic::add($_POST['name'],$_POST['trainerId'],$_POST['courseId']);
     header("Location: index.php?controller=topic");
   }
   public function update()
   {
-    Topic::update($_POST['id'],$_POST['trainerid'],$_POST['courseid'],$_POST['name']);
+    Topic::update($_POST['id'],$_POST['trainerId'],$_POST['courseId'],$_POST['name']);
     header("Location: index.php?controller=topic");
   }
   public function delete()

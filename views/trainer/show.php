@@ -11,7 +11,7 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <?php if($isUpdate) echo "<strong>Update</strong>"; else echo "<strong>Add</strong>" ; echo " Product"?>
+        <?= $isUpdate? "<strong>Update</strong>" : "<strong>Add</strong>";?> Trainer
       </div>
       <div class="card-body">
         <form id="frmChange" class="form-horizontal" action="<?=$form?>" method="post" enctype="multipart/form-data">
