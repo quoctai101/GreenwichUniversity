@@ -2,6 +2,7 @@
 require_once('controllers/base_controller.php');
 require_once('models/topic.php');
 require_once('models/trainer.php');
+require_once('models/course.php');
 
 class TopicController extends BaseController
 {
@@ -19,9 +20,10 @@ class TopicController extends BaseController
   public function show()
   {
     $trainers = Trainer::all();
+    $courses = Course::all();
     if(isset($_GET['id'])) $topic = Topic::find($_GET['id']);
     else $topic = Topic::find(-1);
-    $data = array('topic' => $topic, 'trainers' => $trainers);
+    $data = array('topic' => $topic, 'trainers' => $trainers, 'courses' => $courses);
     $this->render('show', $data);
   }
   public function add()

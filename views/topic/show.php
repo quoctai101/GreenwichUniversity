@@ -41,7 +41,11 @@
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="text-input">Course</label>
             <div class="col-md-9">
-              <input class="form-control" id="text-input" type="text" name="courseId" value="<?=$topic->courseId?>">
+              <select class="form-control" name="courseId">
+                <?php foreach($courses as $course) {?>
+                <option value="<?=$course->id?>" <?= $topic->courseId == $course->id? "selected" : ""?>><?=$course->name?></option>
+                <?php }?>
+              </select>
             </div>
           </div>
         </form>
