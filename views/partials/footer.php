@@ -1,11 +1,11 @@
     <footer class="app-footer">
       <div>
-        <a href="#">ATN Toy Shop</a>
+        <a href="#">Training Management System</a>
         <span>&copy; 2019 creativeLabs.</span>
       </div>
       <div class="ml-auto">
         <span>Powered by</span>
-        <a href="#">ATN</a>
+        <a href="#">FPT Co.</a>
       </div>
     </footer>
     <!-- CoreUI and necessary plugins-->
