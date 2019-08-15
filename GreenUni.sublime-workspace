@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"uc",
+				"ucwords"
+			],
+			[
 				"Type",
 				"Type"
 			],
@@ -39,34 +43,25 @@
 			"file": "routes.php",
 			"settings":
 			{
-				"buffer_size": 1312,
+				"buffer_size": 2408,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "views/trainer/show.php",
+			"file": "views/layout.php",
 			"settings":
 			{
-				"buffer_size": 2577,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "controllers/trainer_controller.php",
-			"settings":
-			{
-				"buffer_size": 1212,
+				"buffer_size": 2796,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "views/partials/header.php",
+			"file": "assets/node_modules/font-awesome/css/font-awesome.css",
 			"settings":
 			{
-				"buffer_size": 2375,
-				"encoding": "UTF-8",
+				"buffer_size": 37414,
 				"line_ending": "Windows"
 			}
 		},
@@ -159,31 +154,43 @@
 	"expanded_folders":
 	[
 		"/C/wamp64/www/GreenUni",
-		"/C/wamp64/www/GreenUni/controllers",
-		"/C/wamp64/www/GreenUni/models",
+		"/C/wamp64/www/GreenUni/assets",
+		"/C/wamp64/www/GreenUni/assets/js",
+		"/C/wamp64/www/GreenUni/assets/node_modules",
+		"/C/wamp64/www/GreenUni/assets/node_modules/font-awesome",
+		"/C/wamp64/www/GreenUni/assets/node_modules/font-awesome/css",
 		"/C/wamp64/www/GreenUni/views",
-		"/C/wamp64/www/GreenUni/views/partials",
-		"/C/wamp64/www/GreenUni/views/trainer"
+		"/C/wamp64/www/GreenUni/views/partials"
 	],
 	"file_history":
 	[
-		"/C/wamp64/www/GreenUni/views/trainee/detail.php",
+		"/C/wamp64/www/GreenUni/routes.php",
+		"/C/wamp64/www/GreenUni/controllers/topic_controller.php",
+		"/C/wamp64/www/GreenUni/controllers/course_controller.php",
+		"/C/wamp64/www/GreenUni/views/layout.php",
+		"/C/wamp64/www/GreenUni/views/partials/header.php",
+		"/C/wamp64/www/GreenUni/index.php",
+		"/C/wamp64/www/GreenUni/login.php",
+		"/C/wamp64/www/GreenUni/logout.php",
+		"/C/wamp64/www/GreenUni/views/topic/inprogress.php",
+		"/C/wamp64/www/GreenUni/views/trainer/show.php",
 		"/C/wamp64/www/GreenUni/controllers/trainee_controller.php",
+		"/C/wamp64/www/GreenUni/controllers/trainer_controller.php",
+		"/C/wamp64/www/GreenUni/views/pages/error.php",
+		"/C/wamp64/www/GreenUni/views/pages/home.php",
+		"/C/wamp64/www/GreenUni/assets/js/login.js",
+		"/C/wamp64/www/GreenUni/assets/js/main.js",
+		"/C/wamp64/www/GreenUni/views/partials/footer.php",
+		"/C/wamp64/www/GreenUni/views/trainee/detail.php",
 		"/C/wamp64/www/GreenUni/models/trainee.php",
 		"/C/wamp64/www/GreenUni/views/trainee/show.php",
 		"/C/wamp64/www/GreenUni/views/topic/index.php",
-		"/C/wamp64/www/GreenUni/controllers/topic_controller.php",
 		"/C/wamp64/www/GreenUni/models/topic.php",
 		"/C/wamp64/www/GreenUni/views/course/inprogress.php",
 		"/C/wamp64/www/GreenUni/models/course.php",
-		"/C/wamp64/www/GreenUni/controllers/course_controller.php",
 		"/C/wamp64/www/GreenUni/views/course/index.php",
 		"/C/wamp64/www/GreenUni/views/course/list_assign.php",
-		"/C/wamp64/www/GreenUni/views/partials/header.php",
-		"/C/wamp64/www/GreenUni/views/layout.php",
-		"/C/wamp64/www/GreenUni/controllers/trainer_controller.php",
 		"/C/wamp64/www/GreenUni/models/trainer.php",
-		"/C/wamp64/www/GreenUni/views/trainer/show.php",
 		"/C/wamp64/www/GreenUni/views/topic/show.php",
 		"/C/wamp64/www/GreenUni/views/course/list_unassign.php",
 		"/C/wamp64/www/GreenUni/views/staff/show.php",
@@ -195,7 +202,6 @@
 		"/C/wamp64/www/GreenUni/models/category.php",
 		"/C/wamp64/www/GreenUni/controllers/category_controller.php",
 		"/C/wamp64/www/GreenUni/views/trainee/index.php",
-		"/C/wamp64/www/GreenUni/views/partials/footer.php",
 		"/C/wamp64/www/GreenUni/models/staff.php",
 		"/C/wamp64/www/GreenUni/controllers/staff_controller.php",
 		"/C/wamp64/www/GreenUni/views/category/show.php",
@@ -203,7 +209,6 @@
 		"/F/admin_dashboard/src/login.html",
 		"/F/admin_dashboard/src/base/forms.html",
 		"/C/wamp64/www/GreenUni/views/trainer/index.php",
-		"/C/wamp64/www/GreenUni/routes.php",
 		"/C/wamp64/www/GreenUni/views/category/index.php",
 		"/C/wamp64/www/GreenUni/models/product.php",
 		"/C/wamp64/www/GreenUni/controllers/products_controller.php",
@@ -286,19 +291,11 @@
 		"/F/argon_dashboard/node_modules/@babel/core/lib/index.js",
 		"/F/argon_dashboard/package.json",
 		"/F/argon_dashboard/public/js/argon.js",
-		"/F/argon_dashboard/bin/www",
-		"/F/argon_dashboard/node_modules/amdefine/amdefine.js",
-		"/F/nodejs/app.js",
-		"/F/argon_dashboard/routes/index.js",
-		"/F/argon_dashboard/views/pages/dashboard.ejs",
-		"/F/argon_dashboard/views/partials/scripts.ejs",
-		"/F/argon_dashboard/logger.js",
-		"/F/argon_dashboard/public/js/argon.min.js",
-		"/F/argon_dashboard/views/partials/header.ejs"
+		"/F/argon_dashboard/bin/www"
 	],
 	"find":
 	{
-		"height": 24.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -314,6 +311,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"staff",
+			"../",
 			"node_modules",
 			"\\",
 			"fs",
@@ -336,6 +335,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"assets/",
 			"../node_modules",
 			"",
 			"Ungsuatcotthep",
@@ -353,7 +353,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -362,36 +362,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1312,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								193,
-								193
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "views/trainer/show.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2577,
+						"buffer_size": 2408,
 						"regions":
 						{
 						},
@@ -405,31 +376,30 @@
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 450.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "controllers/trainer_controller.php",
+					"buffer": 1,
+					"file": "views/layout.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1212,
+						"buffer_size": 2796,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1206,
-								1206
+								2035,
+								2035
 							]
 						],
 						"settings":
@@ -439,40 +409,40 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 315.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "views/partials/header.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2375,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2179,
-								2179
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 270.0,
+						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "assets/node_modules/font-awesome/css/font-awesome.css",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 37414,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								43,
+								64
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -482,7 +452,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"semi_transient": false,
 					"settings":
 					{
@@ -510,7 +480,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"semi_transient": false,
 					"settings":
 					{
@@ -534,17 +504,17 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"semi_transient": false,
 					"settings":
 					{
@@ -572,7 +542,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"semi_transient": false,
 					"settings":
 					{
@@ -596,7 +566,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -659,7 +629,7 @@
 	"project": "GreenUni.sublime-project",
 	"replace":
 	{
-		"height": 44.0
+		"height": 70.0
 	},
 	"save_all_on_build": true,
 	"select_file":

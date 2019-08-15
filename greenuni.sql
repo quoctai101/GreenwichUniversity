@@ -3,10 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 15, 2019 at 03:13 PM
+-- Generation Time: Aug 15, 2019 at 03:21 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -29,11 +30,11 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `gu_admin`;
 CREATE TABLE IF NOT EXISTS `gu_admin` (
-  `Email` varchar(100) NOT NULL,
-  `Name` varchar(100) NOT NULL,
-  `Password` varchar(100) NOT NULL,
+  `Email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`Email`)
-) ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `gu_admin`
@@ -51,10 +52,10 @@ INSERT INTO `gu_admin` (`Email`, `Name`, `Password`) VALUES
 DROP TABLE IF EXISTS `gu_category`;
 CREATE TABLE IF NOT EXISTS `gu_category` (
   `CategoryID` int(11) NOT NULL AUTO_INCREMENT,
-  `CategoryName` varchar(100) NOT NULL,
-  `Description` varchar(100) DEFAULT NULL,
+  `CategoryName` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Description` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`CategoryID`)
-) ;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `gu_category`
@@ -74,10 +75,10 @@ DROP TABLE IF EXISTS `gu_course`;
 CREATE TABLE IF NOT EXISTS `gu_course` (
   `CourseID` int(11) NOT NULL AUTO_INCREMENT,
   `CategoryID` int(11) NOT NULL,
-  `CourseName` varchar(100) NOT NULL,
+  `CourseName` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`CourseID`),
   KEY `CategoryID` (`CategoryID`)
-) ;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `gu_course`
@@ -103,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `gu_enrollment` (
   `EnrollmentDate` date DEFAULT NULL,
   PRIMARY KEY (`TraineeID`,`CourseID`),
   KEY `CourseID` (`CourseID`)
-) ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `gu_enrollment`
@@ -128,11 +129,11 @@ INSERT INTO `gu_enrollment` (`TraineeID`, `CourseID`, `EnrollmentDate`) VALUES
 DROP TABLE IF EXISTS `gu_staff`;
 CREATE TABLE IF NOT EXISTS `gu_staff` (
   `StaffID` int(11) NOT NULL AUTO_INCREMENT,
-  `Email` varchar(100) NOT NULL,
-  `Name` varchar(100) NOT NULL,
-  `Password` varchar(100) NOT NULL,
+  `Email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`StaffID`)
-) ;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `gu_staff`
@@ -154,11 +155,11 @@ CREATE TABLE IF NOT EXISTS `gu_topic` (
   `TopicID` int(11) NOT NULL AUTO_INCREMENT,
   `TrainerID` int(11) NOT NULL,
   `CourseID` int(11) NOT NULL,
-  `TopicName` varchar(100) NOT NULL,
+  `TopicName` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`TopicID`),
   KEY `TrainerID` (`TrainerID`),
   KEY `CourseID` (`CourseID`)
-) ;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `gu_topic`
@@ -179,14 +180,14 @@ INSERT INTO `gu_topic` (`TopicID`, `TrainerID`, `CourseID`, `TopicName`) VALUES
 DROP TABLE IF EXISTS `gu_trainee`;
 CREATE TABLE IF NOT EXISTS `gu_trainee` (
   `TraineeID` int(11) NOT NULL AUTO_INCREMENT,
-  `TraineeName` varchar(100) NOT NULL,
+  `TraineeName` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `DOB` date DEFAULT NULL,
-  `Email` varchar(100) NOT NULL,
-  `Address` varchar(1000) DEFAULT NULL,
+  `Email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Address` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `TOEICScore` float DEFAULT NULL,
-  `Password` varchar(100) NOT NULL,
+  `Password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`TraineeID`)
-) ;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `gu_trainee`
@@ -206,12 +207,12 @@ INSERT INTO `gu_trainee` (`TraineeID`, `TraineeName`, `DOB`, `Email`, `Address`,
 DROP TABLE IF EXISTS `gu_trainer`;
 CREATE TABLE IF NOT EXISTS `gu_trainer` (
   `TrainerID` int(11) NOT NULL AUTO_INCREMENT,
-  `TrainerName` varchar(100) NOT NULL,
-  `Email` varchar(100) NOT NULL,
-  `Telephone` varchar(20) NOT NULL,
-  `Password` varchar(100) NOT NULL,
+  `TrainerName` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Telephone` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`TrainerID`)
-) ;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `gu_trainer`
