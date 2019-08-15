@@ -47,14 +47,14 @@ class Trainer
     $req->bindValue(':id',$id);
     $req->execute();
   }
-  static function add($name, $email, $telephone, $password = NULL)
+  static function add($name, $email, $telephone, $password)
   {
     $db = DB::getInstance();
     $req = $db->prepare("INSERT INTO gu_trainer(TrainerName, Email, Telephone, Password)  VALUES (:name, :email, :telephone, :password);");
     $req->bindValue(':name',$name);
     $req->bindValue(':email',$email);
     $req->bindValue(':telephone',$telephone);
-    $req->bindValue(':password',$name);
+    $req->bindValue(':password',$password);
     $req->execute();
   }
   static function update($id,$name, $email, $telephone, $password = NULL)
