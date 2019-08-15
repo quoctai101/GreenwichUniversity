@@ -90,12 +90,33 @@ class Course
 
     return $list;
   }
-  static function add_trainee($traineeId, $couseId)
+  static function assign_trainee($id)
+  {
+    $list = [];
+    $db = DB::getInstance();
+    $req = $db->query("SELECT gu_trainee.TraineeID, TraineeName FROM gu_trainee
+                        INNER JOIN gu_enrollment ON gu_trainee.TraineeID = gu_enrollment.TraineeID
+                        WHERE CourseID = $id;");
+    foreach ($req->fetchAll() as $item) {
+      $list[] = new Trainee($item['TraineeID'], $item['TraineeName'], NULL, NULL, NULL, NULL, NULL);
+    }
+
+    return $list;
+  }
+  static function add_trainee($traineeId, $courseId)
   {
     $db = DB::getInstance();
-    $req = $db->prepare("INSERT INTO gu_enrollment(TraineeID, CourseID) VALUES (:traineeId,:couseId);");
+    $req = $db->prepare("INSERT INTO gu_enrollment(TraineeID, CourseID) VALUES (:traineeId,:courseId);");
     $req->bindValue(':traineeId',$traineeId);
-    $req->bindValue(':couseId',$couseId);
+    $req->bindValue(':courseId',$courseId);
+    $req->execute();
+  }
+  static function remove_trainee($traineeId, $courseId)
+  {
+    $db = DB::getInstance();
+    $req = $db->prepare("DELETE FROM gu_enrollment WHERE TraineeID = :traineeId AND CourseID = :courseId;");
+    $req->bindValue(':traineeId',$traineeId);
+    $req->bindValue(':courseId',$courseId);
     $req->execute();
   }
 }

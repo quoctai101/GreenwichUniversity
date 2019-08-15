@@ -35,6 +35,9 @@
 						<a href="./?controller=course&action=list_unassign&id=<?=$course->id?>"><button class="btn btn-success" type="button">
 	                      <i class="fa fa-pencil-square-o"></i>&nbsp;Add Trainee
 	                    </button></a>
+	                    <a href="./?controller=course&action=list_assign&id=<?=$course->id?>"><button class="btn btn-warning" type="button">
+	                      <i class="fa fa-pencil-square-o"></i>&nbsp;Remove Trainee
+	                    </button></a>
 						<a href="./?controller=course&action=show&id=<?=$course->id?>"><button class="btn btn-primary" type="button">
 	                      <i class="fa fa-pencil-square-o"></i>&nbsp;Update
 	                    </button></a>

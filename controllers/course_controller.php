@@ -24,6 +24,13 @@ class CourseController extends BaseController
     $data = array('course' => $course,'categories' => $categories);
     $this->render('show', $data);
   }
+  public function list_assign()
+  {
+    $courseId = $_GET['id'];
+    $trainees = Course::assign_trainee($_GET['id']);
+    $data = array('trainees' => $trainees, 'courseId' => $courseId);
+    $this->render('list_assign', $data);
+  }
   public function list_unassign()
   {
     $courseId = $_GET['id'];
@@ -34,6 +41,11 @@ class CourseController extends BaseController
   public function add_trainee()
   {
     Course::add_trainee($_POST['traineeId'],$_POST['courseId']);
+    header("Location: index.php?controller=course");
+  }
+  public function remove_trainee()
+  {
+    Course::remove_trainee($_POST['traineeId'],$_POST['courseId']);
     header("Location: index.php?controller=course");
   }
   public function add()
