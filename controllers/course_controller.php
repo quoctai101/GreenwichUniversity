@@ -63,4 +63,10 @@ class CourseController extends BaseController
     Course::delete($_GET['id']);
     header("Location: index.php?controller=course");
   }
+  public function inprogress()
+  {
+    $courses = Course::inprogress($_GET['id']);
+    $data = array('courses' => $courses);
+    $this->render('inprogress', $data);
+  }
 }

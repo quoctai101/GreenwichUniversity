@@ -119,4 +119,19 @@ class Course
     $req->bindValue(':courseId',$courseId);
     $req->execute();
   }
+  static function inprogress($traineeId)
+  {
+    $list = [];
+    $db = DB::getInstance();
+    $req = $db->query("SELECT gu_course.*, CategoryName
+                        FROM (gu_course LEFT JOIN gu_category ON gu_course.CategoryID = gu_category.CategoryID)
+                        LEFT JOIN gu_enrollment ON gu_course.CourseID = gu_enrollment.CourseID
+                        WHERE TraineeID = $traineeId;");
+
+    foreach ($req->fetchAll() as $item) {
+      $list[] = new Course($item['CourseID'], $item['CourseName'], $item['CategoryID'], $item['CategoryName'], NULL);
+    }
+
+    return $list;
+  }
 }
