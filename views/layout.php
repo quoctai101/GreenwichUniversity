@@ -5,17 +5,17 @@
         <?php if($_SESSION['role']=='Administrator') {?>
         <li class="nav-item">
           <a class="nav-link" href="./?controller=trainer">
-            <i class="nav-icon icon-pencil"></i> Trainers</a>
+            <i class="nav-icon icon-user"></i> Trainers</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./?controller=staff">
-            <i class="nav-icon icon-pencil"></i> Staffs</a>
+            <i class="nav-icon icon-user"></i> Staffs</a>
         </li>
         <?php } ?>
         <?php if($_SESSION['role']=='Staff') {?>
         <li class="nav-item">
           <a class="nav-link" href="./?controller=trainee">
-            <i class="nav-icon icon-pencil"></i> Trainees</a>
+            <i class="nav-icon icon-user"></i> Trainees</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./?controller=category">
@@ -31,7 +31,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./?controller=trainer">
-            <i class="nav-icon icon-pencil"></i> Trainers</a>
+            <i class="nav-icon icon-user"></i> Trainers</a>
         </li>
         <?php } ?>
         <?php if($_SESSION['role']=='Trainer') {?>
@@ -41,7 +41,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./?controller=trainer&action=detail">
-            <i class="nav-icon icon-pencil"></i> Edit information</a>
+            <i class="nav-icon icon-user"></i> Edit information</a>
         </li>
         <?php } ?>
         <?php if($_SESSION['role']=='Trainee') {?>
@@ -51,7 +51,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./?controller=trainee&action=detail">
-            <i class="nav-icon icon-pencil"></i> My Information</a>
+            <i class="nav-icon icon-user"></i> My Information</a>
         </li>
         <?php } ?>
       </ul>
