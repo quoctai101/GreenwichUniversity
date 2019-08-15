@@ -37,4 +37,10 @@ class TrainerController extends BaseController
     Trainer::delete($_GET['id']);
     header("Location: index.php?controller=trainer");
   }
+  public function detail()
+  {
+    $trainer = Trainer::find($_GET['id']);
+    $data = array('trainer' => $trainer);
+    $this->render('show', $data);
+  }
 }

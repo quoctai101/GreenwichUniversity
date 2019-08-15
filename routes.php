@@ -2,7 +2,7 @@
 	$controllers = array(
 	  'pages' => ['home', 'error'],
 	  'category' => ['index', 'update', 'delete', 'show', 'add'],
-	  'trainer' => ['index', 'update', 'delete', 'show', 'add'],
+	  'trainer' => ['index', 'update', 'delete', 'show', 'add', 'detail'],
 	  'topic' => ['index', 'update', 'delete', 'show', 'add', 'inprogress'],
 	  'staff' => ['index', 'update', 'delete', 'show', 'add'],
 	  'trainee' => ['index', 'update', 'delete', 'show', 'add', 'detail'],
