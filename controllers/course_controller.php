@@ -65,7 +65,7 @@ class CourseController extends BaseController
   }
   public function inprogress()
   {
-    $courses = Course::inprogress($_GET['id']);
+    $courses = Course::inprogress($_SESSION['id']);
     $data = array('courses' => $courses);
     $this->render('inprogress', $data);
   }

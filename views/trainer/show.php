@@ -40,12 +40,14 @@
               <input class="form-control" id="text-input" type="text" name="telephone" value="<?=$trainer->telephone?>">
             </div>
           </div>
+          <?php if($_SESSION['role']=='Administrator') {?>
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="text-input">Password</label>
             <div class="col-md-9">
               <input class="form-control" id="text-input" type="password" name="password" value="<?=$trainer->password?>">
             </div>
           </div>
+          <?php } ?>
         </form>
       </div>
       <div class="card-footer">

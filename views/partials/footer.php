@@ -18,6 +18,5 @@
     <!-- Plugins and scripts required by this view-->
     <script src="assets/node_modules/chart.js/dist/Chart.min.js"></script>
     <script src="assets/node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>
-    <script src="assets/js/main.js"></script>
   </body>
 </html>

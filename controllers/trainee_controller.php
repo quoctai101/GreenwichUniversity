@@ -43,7 +43,7 @@ class TraineeController extends BaseController
   }
   public function detail()
   {
-    $trainee = Trainee::find($_GET['id']);
+    $trainee = Trainee::find($_SESSION['id']);
     $data = array('trainee' => $trainee);
     $this->render('detail', $data);
   }

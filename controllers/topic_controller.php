@@ -43,8 +43,8 @@ class TopicController extends BaseController
   }
   public function inprogress()
   {
-    $topics = Topic::inprogress($_GET['id']);
+    $topics = Topic::inprogress($_SESSION['id']);
     $data = array('topics' => $topics);
-    $this->render('index', $data);
+    $this->render('inprogress', $data);
   }
 }

@@ -39,7 +39,7 @@ class TrainerController extends BaseController
   }
   public function detail()
   {
-    $trainer = Trainer::find($_GET['id']);
+    $trainer = Trainer::find($_SESSION['id']);
     $data = array('trainer' => $trainer);
     $this->render('show', $data);
   }

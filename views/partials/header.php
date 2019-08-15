@@ -16,7 +16,7 @@
     <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
     <meta name="author" content="Łukasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-    <title>Dashboard - ATN Toy Shop</title>
+    <title>Training Management System</title>
     <!-- Icons-->
     <link href="assets/node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
     <link href="assets/node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
@@ -39,9 +39,9 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <ul class="nav navbar-nav d-md-down-none">
-        <li class="nav-item px-3">
+        <li class="nav-item px-3">Hello <?= $_SESSION['role'] ?>!
         </li>
-        <li class="nav-item px-3">
+        <li class="nav-item px-3"><a class="nav-link" href="./logout.php">Log out</a>
         </li>
         <li class="nav-item px-3">
         </li>
