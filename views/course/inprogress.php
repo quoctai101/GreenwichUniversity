@@ -2,9 +2,7 @@
 <div class="row">
   <div class="col-md-12">
     <div class="card">
-      <div class="card-header">List Inprogress Courses <a href="./?controller=course&action=show"><button class="btn btn-primary" type="button">
-          <i class="fa fa-plus-square-o"></i>&nbsp;Add
-        </button></a></div>
+      <div class="card-header">List Inprogress Courses</div>
       <div class="card-body">
           <table class="table table-responsive-sm table-bordered">
               <thead class="thead-light">
