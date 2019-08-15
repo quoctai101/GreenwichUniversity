@@ -41,4 +41,10 @@ class TraineeController extends BaseController
     Trainee::delete($_GET['id']);
     header("Location: index.php?controller=trainee");
   }
+  public function detail()
+  {
+    $trainee = Trainee::find($_GET['id']);
+    $data = array('trainee' => $trainee);
+    $this->render('detail', $data);
+  }
 }
