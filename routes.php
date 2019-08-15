@@ -3,7 +3,7 @@
 	  'pages' => ['home', 'error'],
 	  'category' => ['index', 'update', 'delete', 'show', 'add'],
 	  'trainer' => ['index', 'update', 'delete', 'show', 'add'],
-	  'topic' => ['index', 'update', 'delete', 'show', 'add'],
+	  'topic' => ['index', 'update', 'delete', 'show', 'add', 'inprogress'],
 	  'staff' => ['index', 'update', 'delete', 'show', 'add'],
 	  'trainee' => ['index', 'update', 'delete', 'show', 'add'],
 	  'course' => ['index', 'update', 'delete', 'show', 'add', 'list_unassign', 'add_trainee', 'list_assign', 'remove_trainee','inprogress']

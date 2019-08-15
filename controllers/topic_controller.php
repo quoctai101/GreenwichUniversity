@@ -41,4 +41,10 @@ class TopicController extends BaseController
     Topic::delete($_GET['id']);
     header("Location: index.php?controller=topic");
   }
+  public function inprogress()
+  {
+    $topics = Topic::inprogress($_GET['id']);
+    $data = array('topics' => $topics);
+    $this->render('index', $data);
+  }
 }

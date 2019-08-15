@@ -75,4 +75,18 @@ class Topic
     $req->bindValue(':id',$id);
     $req->execute();
   }
+  static function inprogress($trainerId)
+  {
+    $list = [];
+    $db = DB::getInstance();
+    $req = $db->query("SELECT gu_topic.*, CourseName
+                      FROM gu_topic LEFT JOIN gu_course ON gu_topic.CourseID = gu_course.CourseID
+                      WHERE TrainerID = $trainerId;");
+
+    foreach ($req->fetchAll() as $item) {
+      $list[] = new Topic($item['TopicID'], $item['TopicName'], NULL, NULL, NULL, $item['CourseName']);
+    }
+
+    return $list;
+  }
 }
