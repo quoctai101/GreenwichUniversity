@@ -5,9 +5,11 @@
 			"path": "."
 		}
 	],
-    "settings": {
-        "xdebug": {
-             "url": "http://localhost",
-        }
-    }
+	"settings":
+	{
+		"xdebug":
+		{
+			"url": "http://localhost"
+		}
+	}
 }
